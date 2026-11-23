@@ -1,0 +1,39 @@
+{
+ "id": "3F8Ea_L0G8Clg8UPqpq7-Ak",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: Review** \u2014 FY2024 net loss RM4.13m, negative operating cash flow of -RM1.06m, Interest cover -1.76x.\n- **Profile:** Active private company, Agriculture, Selangor, incorporated 2023. Oil palm plantation and fresh fruit bunch supply. Incorporated 2023-08-11 (2.3 years old).\n- **Financials (FY2024):** revenue RM62.46m, net loss RM4.13m, equity RM45.95m, audit opinion Unqualified. Accounts are for year ended 2024-06-30 (18 months old).\n- **Litigation:** No court cases.\n- **People:** 4 director(s). Largest shareholder: Director 1 (53%).",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRNkNJEJdYOyGkezX+NumNbg7GjBSbnKVzPLkbnzNlJQHuqEQA9k3xJychYgqAy0qvk4lhVcYdwxz+Hyg4SvpDlVSwo+ZyU0+kBpZkMD9xzm4UJh22orFMBCWRlny1nLylU4N8t5tfnAnoPU2CFHWf9XWymCmb0pQoVMlm+80fRzUKw4GC2b5A=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448802,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 188,
+  "prompt_tokens": 1215,
+  "total_tokens": 1403,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a risk-screening summary of a Malaysian company for a team that vets suppliers\nand project partners. The team decides from your FIRST LINE if the company needs a closer look.\n\nUse ONLY the facts in the JSON. Every number in the JSON is already formatted. Copy it exactly; do not round, convert or calculate.\n\nWrite EXACTLY this Markdown: 5 lines, no blank lines, no preamble, no extra text.\n\n**Risk: <risk_level>** \u2014 <reasons>.\n- **Profile:** <status> private company, <industry>, <state>, incorporated <year>. <nature_of_business in English>.\n- **Financials (FY<latest_year>):** <financials>\n- **Litigation:** <litigation>\n- **People:** <N> director(s). Largest shareholder: <name> (<percentage>%). <people flags>\n\nRules:\n1. <risk_level> is exactly \"risk_level\" in the JSON.\n2. <reasons>: only flags with severity \"high\" or \"review\" (see \"severity\"), most serious first,\n   at most 3. NEVER put an \"info\" flag in the risk line. If there are none, write \"no high or review flags\".\n3. Mention EVERY flag once: in the risk line or in its section line. Keep the key words of the\n   flag text (for example \"months old\", \"appointed\", \"defendant\", \"judgment\", \"interest cover\").\n4. <financials>: revenue and its change, net profit or net loss, equity, audit opinion. Add a ratio\n   or cash flow ONLY if it has a flag. If \"revenue_change_vs_year\" is not latest_year - 1, write\n   \"vs FY<that year>\", not \"on prior year\". If the stale_financials flag exists, write\n   \"Accounts <accounts_age_months> months old.\" If financials is null, write\n   \"No financial statements in the record.\" and leave out \"(FY<latest_year>)\".\n5. <litigation>: \"<total> case(s): <as_defendant> as defendant (<open_as_defendant> pending or adverse),\n   <as_plaintiff> as plaintiff.\" plus any litigation flags. If total is 0, write \"No court cases.\"\n6. Do not write the company name or registration number.\n7. Money: RM1.23m or RM450k. Ratios: two decimals. Percentages: whole numbers.\n   Write \"net loss RM1.08m\", not \"negative ... -RM1.08m\".\n8. Maximum 100 words. Remove detail before you remove a flag.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-001158\",\n \"name\": \"Bestari Kirana Ladang Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Agriculture\",\n \"state\": \"Selangor\",\n \"nature_of_business\": \"Oil palm plantation and fresh fruit bunch supply\",\n \"incorporated\": \"2023-08-11\",\n \"directors\": 4,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 52.86\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-06-30\",\n  \"years_available\": [\n   2024\n  ],\n  \"revenue\": \"RM62.46m\",\n  \"revenue_change\": null,\n  \"revenue_change_vs_year\": null,\n  \"accounts_age_months\": 18,\n  \"profit_after_tax\": \"-RM4.13m\",\n  \"net_margin\": \"-7%\",\n  \"total_equity\": \"RM45.95m\",\n  \"borrowings\": \"RM27.24m\",\n  \"operating_cash_flow\": \"-RM1.06m\",\n  \"quick_ratio\": \"1.25\",\n  \"interest_cover\": \"-1.76\",\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 4\"\n },\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"Review\",\n \"flags\": {\n  \"young_company\": \"Incorporated 2023-08-11 (2.3 years old)\",\n  \"net_loss\": \"FY2024 net loss RM4.13m\",\n  \"negative_operating_cash_flow\": \"Negative operating cash flow of -RM1.06m\",\n  \"low_interest_cover\": \"Interest cover -1.76x\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-06-30 (18 months old)\"\n },\n \"severity\": {\n  \"young_company\": \"info\",\n  \"net_loss\": \"review\",\n  \"negative_operating_cash_flow\": \"review\",\n  \"low_interest_cover\": \"review\",\n  \"stale_financials\": \"info\"\n }\n}"
+}

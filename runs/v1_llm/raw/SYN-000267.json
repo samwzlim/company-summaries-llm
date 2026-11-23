@@ -1,0 +1,39 @@
+{
+ "id": "Sl8Ea_SbNYuN694PkPWBqQE",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: Review** \u2014 Stale financials and recent name change.\n\n* **Profile**: Active Kuala Lumpur retailer of textiles and baju kurung incorporated in 1990, formerly Sinar Industries Sdn. Bhd. Name changed 2025-06-25.\n* **Financials**: 2024 revenue RM19.37m, profit RM473k, equity RM12.32m, borrowings RM5.91m. Quick ratio 1.49, interest cover 2.91. Unqualified audit by Audit Firm 2. Accounts are 18 months old.\n* **Litigation**: 5 total cases, all as plaintiff, 0 as defendant, 0 open as defendant.\n* **People**: 3 directors, 1 appointed in the last 24 months. Largest shareholder is individual Director 1 (90%).",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRPBA9RunvapbyL/s17duY88zCzPv7jwzRMutxpJDtO4neJbYMDCZHlj95CBA44FmRJH0G/fTZikRy/LjLUUUYrmNPHJkQsDI7LYqEH6wFtIeuHpOBAie8psK+8/XWQ5G2kgfkNwu5i/vcy/m82f0lwE1k/abhqjmK0fMZ5HIc5aPnWA0g3mHg=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448653,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 193,
+  "prompt_tokens": 728,
+  "total_tokens": 921,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000267\",\n \"name\": \"Global Everbright Store Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Retail\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Retail of textiles and baju kurung\",\n \"incorporated\": \"1990-10-28\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 89.67\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-06-30\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 19374478,\n  \"revenue_change\": 0.07300793133450338,\n  \"profit_after_tax\": 473200,\n  \"net_margin\": 0.0244,\n  \"total_equity\": 12321741,\n  \"borrowings\": 5913572,\n  \"operating_cash_flow\": 965505,\n  \"quick_ratio\": 1.4912,\n  \"interest_cover\": 2.9143,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 2\"\n },\n \"cases\": {\n  \"total\": 5,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 5,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"Review\",\n \"flags\": {\n  \"recent_name_change\": \"Former name Sinar Industries Sdn. Bhd. (changed 2025-06-25)\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-06-30 (18 months old)\",\n  \"recent_directors\": \"1 of 3 directors appointed in the last 24 months\"\n }\n}"
+}

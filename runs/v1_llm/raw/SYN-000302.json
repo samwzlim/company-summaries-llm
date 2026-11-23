@@ -1,0 +1,39 @@
+{
+ "id": "RF8Ea-y4MqaYz7sPhp2u4Qc",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: Review** \u2014 Lack of financial statements in the record prevents full capability assessment, combined with a recently appointed director.\n\n* **Profile**: Active professional services company in Perak, registered in 2014 (SYN-000302), providing management consulting for SMEs with 3 directors.\n* **Financials**: No financial statements in the record.\n* **Litigation**: 0 total cases, with 0 as defendant, 0 as plaintiff, and 0 open as defendant.\n* **People**: Largest shareholder is an individual (Director 2) holding 58%. 1 of 3 directors appointed in the last 24 months.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRO7OD8/zw1BjroHqQWsBbJ9xXWpVIcUiNxaCH0lXott9Wbyg4+t+jQETUhDuRl460cFRuJaNauyqEbYS+3SYkRikHHfxTv9UzpeK5HyHBUx7Gt2ZukG0PQY1cV0Px7vHuiae1dw/skl4KXjy4EKDawDYOVMw+84U64Hf7FmW40kNVLb7iJ5hg=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448645,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 141,
+  "prompt_tokens": 432,
+  "total_tokens": 573,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000302\",\n \"name\": \"Global Pacific Perunding Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Professional Services\",\n \"state\": \"Perak\",\n \"nature_of_business\": \"Management consulting for SMEs\",\n \"incorporated\": \"2014-01-15\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 2\",\n  \"percentage\": 58.7\n },\n \"financials\": null,\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"Review\",\n \"flags\": {\n  \"no_financials\": \"No financial statements in the record\",\n  \"recent_directors\": \"1 of 3 directors appointed in the last 24 months\"\n }\n}"
+}

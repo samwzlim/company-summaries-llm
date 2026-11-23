@@ -1,0 +1,39 @@
+{
+ "id": "U18Ea9OBI5DvqfkPkaXy4QI",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: No major flags** \u2014 stable financials with an unqualified audit opinion and active status.\n\n* **Profile**: Active Food & Beverage wholesaler of frozen food in Kuala Lumpur, incorporated on 2014-10-26 (Registration: SYN-001970).\n* **Financials**: FY2024 revenue RM20.21m (+12%), profit RM944.84k, net margin 4.68%, equity RM18.51m, borrowings RM7.53m, operating cash flow RM2.09m, quick ratio 1.82, interest cover 4.00, audited by Audit Firm 2.\n* **Litigation**: 5 total cases, all as plaintiff, with 0 as defendant and 0 open as defendant.\n* **People**: 3 directors; largest shareholder is an individual (Director 1) holding 63%.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRNvvy8NgGHMTzIHlnKzO9W278doB/qXaGJHLKhnp8F75E4cBtzivxFRfIsE+grus62dH4EaPvspbr0AnzFv66zbpg5b3CfgPK+edNQIayMu+NBUje034gF1gMWfZ1b901mSAFV8bg8B/Qr7ZnXjGw58e+0C0lVoXQIHrM4uhvJxgKw41l356Q=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448663,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 203,
+  "prompt_tokens": 638,
+  "total_tokens": 841,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-001970\",\n \"name\": \"Teguh Sinar Food Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Food & Beverage\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Wholesale distribution of frozen food to restaurants\",\n \"incorporated\": \"2014-10-26\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 62.56\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-12-31\",\n  \"years_available\": [\n   2022,\n   2024\n  ],\n  \"revenue\": 20207092,\n  \"revenue_change\": 0.11848683098039986,\n  \"profit_after_tax\": 944841,\n  \"net_margin\": 0.0468,\n  \"total_equity\": 18514515,\n  \"borrowings\": 7533168,\n  \"operating_cash_flow\": 2089111,\n  \"quick_ratio\": 1.8174,\n  \"interest_cover\": 4.0006,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 2\"\n },\n \"cases\": {\n  \"total\": 5,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 5,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"No major flags\",\n \"flags\": {}\n}"
+}

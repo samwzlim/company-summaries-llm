@@ -1,0 +1,39 @@
+{
+ "id": "p18Ea4eYJtfsz7sP6oXEqAc",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: No major flags** \u2014 no high or review flags.\n- **Profile:** Active private company, Food & Beverage, Kuala Lumpur, incorporated 2014. Wholesale distribution of frozen food to restaurants.\n- **Financials (FY2024):** Revenue RM20.21m (+12% vs FY2022), net profit RM944k, equity RM18.51m, audit opinion Unqualified.\n- **Litigation:** 5 case(s): 0 as defendant (0 pending or adverse), 5 as plaintiff.\n- **People:** 3 director(s). Largest shareholder: Director 1 (63%).",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRM8fRkh+5//nbpxKX8dfgLPIBHrChGU5/+sfX/diBfsGXYzXji0O/FCIUBuDMK35i4M5PgjPEobBTWSQGRRN1oC0U1kkeBQ4KJ1wuT1gO3w6YZ781sX0kD90pI4UpaX+dK4E0Rn635AzW7BFK79+LwQeKkSuyLVqIqTyoA6IEhSgUj+VGME7Q=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448746,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 147,
+  "prompt_tokens": 1064,
+  "total_tokens": 1211,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a risk-screening summary of a Malaysian company for a team that vets suppliers\nand project partners. The team decides from your FIRST LINE if the company needs a closer look.\n\nUse ONLY the facts in the JSON. Copy numbers from the JSON; do not calculate new ones.\n\nWrite EXACTLY this Markdown: 5 lines, no blank lines, no preamble, no extra text.\n\n**Risk: <risk_level>** \u2014 <reasons>.\n- **Profile:** <status> private company, <industry>, <state>, incorporated <year>. <nature_of_business in English>.\n- **Financials (FY<latest_year>):** <financials>\n- **Litigation:** <litigation>\n- **People:** <N> director(s). Largest shareholder: <name> (<percentage>%). <people flags>\n\nRules:\n1. <risk_level> is exactly \"risk_level\" in the JSON.\n2. <reasons>: only flags with severity \"high\" or \"review\" (see \"severity\"), most serious first,\n   at most 3. NEVER put an \"info\" flag in the risk line. If there are none, write \"no high or review flags\".\n3. Mention EVERY flag once: in the risk line or in its section line. Keep the key words of the\n   flag text (for example \"months old\", \"appointed\", \"defendant\", \"judgment\", \"interest cover\").\n4. <financials>: revenue and its change, net profit or net loss, equity, audit opinion. Add a ratio\n   or cash flow ONLY if it has a flag. If \"revenue_change_vs_year\" is not latest_year - 1, write\n   \"vs FY<that year>\", not \"on prior year\". If the stale_financials flag exists, write\n   \"Accounts <accounts_age_months> months old.\" If financials is null, write\n   \"No financial statements in the record.\" and leave out \"(FY<latest_year>)\".\n5. <litigation>: \"<total> case(s): <as_defendant> as defendant (<open_as_defendant> pending or adverse),\n   <as_plaintiff> as plaintiff.\" plus any litigation flags. If total is 0, write \"No court cases.\"\n6. Do not write the company name or registration number.\n7. Money: RM1.23m or RM450k. Ratios: two decimals. Percentages: whole numbers.\n   Write \"net loss RM1.08m\", not \"negative ... -RM1.08m\".\n8. Maximum 100 words. Remove detail before you remove a flag.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-001970\",\n \"name\": \"Teguh Sinar Food Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Food & Beverage\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Wholesale distribution of frozen food to restaurants\",\n \"incorporated\": \"2014-10-26\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 62.56\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-12-31\",\n  \"years_available\": [\n   2022,\n   2024\n  ],\n  \"revenue\": 20207092,\n  \"revenue_change\": 0.11848683098039986,\n  \"revenue_change_vs_year\": 2022,\n  \"accounts_age_months\": 12,\n  \"profit_after_tax\": 944841,\n  \"net_margin\": 0.0468,\n  \"total_equity\": 18514515,\n  \"borrowings\": 7533168,\n  \"operating_cash_flow\": 2089111,\n  \"quick_ratio\": 1.8174,\n  \"interest_cover\": 4.0006,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 2\"\n },\n \"cases\": {\n  \"total\": 5,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 5,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"No major flags\",\n \"flags\": {},\n \"severity\": {}\n}"
+}

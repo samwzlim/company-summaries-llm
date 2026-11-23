@@ -1,0 +1,39 @@
+{
+ "id": "HF8Ea9zGM_mumNMP_sLUiAM",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: High concern** \u2014 Company status is winding up, has an open winding-up petition, and 5 open defendant cases.\n\n* **Profile**: Technology firm in Selangor (incorporated 2019-09-29) doing software development for small business accounting; 3 directors (2 appointed in the last 24 months) and Director 2 holds 52.17%.\n* **Financials**: FY2024 revenue RM13.01m, profit RM1.28m, total equity RM9.63m, borrowings RM4.35m, and quick ratio 1.61. FY2022 had material uncertainty on going concern; latest accounts are 21 months old.\n* **Litigation**: 8 total cases as defendant (5 open, claims RM2.51m), 1 judgment entered, and 1 open winding-up petition (CASE-2023-1186).\n* **People**: 3 directors with 2 recent appointments; largest shareholder is Director 2.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRNz9uqCNFxxOKcqTun2cONDKWfWVRZLxRkeYvwf9p4Xn/DFT71KFzMwXNLVgbtHhCYOb4nbdCj7W205zkW1E2lZelV9WGmLRIIKsp+3CrNWYnp2iIRkAyQYPhM4xzh/zRROO80nNT6pqoM1Qq4dc+d4BWc4ZV3taRd6athyeRVuFlrao6mryA=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448615,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 231,
+  "prompt_tokens": 839,
+  "total_tokens": 1070,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000545\",\n \"name\": \"Cahaya Golden Systems Sdn. Bhd.\",\n \"status\": \"Winding up\",\n \"industry\": \"Technology\",\n \"state\": \"Selangor\",\n \"nature_of_business\": \"Software development for small business accounting\",\n \"incorporated\": \"2019-09-29\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 2\",\n  \"percentage\": 52.17\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-03-31\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 13006124,\n  \"revenue_change\": 0.024627699568094314,\n  \"profit_after_tax\": 1278980,\n  \"net_margin\": 0.0983,\n  \"total_equity\": 9634633,\n  \"borrowings\": 4352967,\n  \"operating_cash_flow\": 1326836,\n  \"quick_ratio\": 1.6174,\n  \"interest_cover\": 8.0291,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 2\"\n },\n \"cases\": {\n  \"total\": 8,\n  \"as_defendant\": 8,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 5\n },\n \"risk_level\": \"High concern\",\n \"flags\": {\n  \"status_not_active\": \"Status: Winding up\",\n  \"audit_issue_earlier\": \"FY2022 audit: Unqualified with material uncertainty on going concern\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-03-31 (21 months old)\",\n  \"open_defendant_cases\": \"5 pending or adverse case(s) as defendant, total claims RM2,512,400\",\n  \"winding_up_petition_open\": \"Winding-up petition CASE-2023-1186 (Judgment entered, filed 2023-10-13)\",\n  \"judgment_against\": \"1 judgment(s) entered against the company\",\n  \"recent_directors\": \"2 of 3 directors appointed in the last 24 months\"\n }\n}"
+}

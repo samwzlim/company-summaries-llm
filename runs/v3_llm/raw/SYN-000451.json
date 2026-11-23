@@ -1,0 +1,39 @@
+{
+ "id": "zF8Ea5fNMObt694PlrvioAw",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: High concern** \u2014 Negative equity, net loss, negative operating cash flow.\n- **Profile:** Active private company, Food & Beverage, Kuala Lumpur, incorporated 1995. Operating coffee shops and cafes in Penang.\n- **Financials (FY2024):** Revenue RM2.08m, -7% vs FY2023, net loss RM276k, equity -RM19k, Unqualified audit, operating cash flow -RM139k, quick ratio 0.63, interest cover -5.37, accounts 18 months old.\n- **Litigation:** 2 case(s): 1 as defendant (0 pending or adverse), 1 as plaintiff.\n- **People:** 5 director(s). Largest shareholder: Director 1 (51%). Former name Gemilang Ventures Sdn. Bhd. (changed 2025-11-27).",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRMke3w19GCgWtu+i/rm06iUfHztRDqWC6QbkNUP/drcCIT+4lhSWNevvFagEk8HUQj/FUPPebWyfxcYllHFmnhOmiddGk3HJALdWuuFZ4EE2KV+I2rASA+eGY+aflUw9ELB3G3r1XLim/aawtSi0tD6+tvBul0SLa1JWWxbakDPNArEgeQJVw=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448795,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 203,
+  "prompt_tokens": 1297,
+  "total_tokens": 1500,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a risk-screening summary of a Malaysian company for a team that vets suppliers\nand project partners. The team decides from your FIRST LINE if the company needs a closer look.\n\nUse ONLY the facts in the JSON. Every number in the JSON is already formatted. Copy it exactly; do not round, convert or calculate.\n\nWrite EXACTLY this Markdown: 5 lines, no blank lines, no preamble, no extra text.\n\n**Risk: <risk_level>** \u2014 <reasons>.\n- **Profile:** <status> private company, <industry>, <state>, incorporated <year>. <nature_of_business in English>.\n- **Financials (FY<latest_year>):** <financials>\n- **Litigation:** <litigation>\n- **People:** <N> director(s). Largest shareholder: <name> (<percentage>%). <people flags>\n\nRules:\n1. <risk_level> is exactly \"risk_level\" in the JSON.\n2. <reasons>: only flags with severity \"high\" or \"review\" (see \"severity\"), most serious first,\n   at most 3. NEVER put an \"info\" flag in the risk line. If there are none, write \"no high or review flags\".\n3. Mention EVERY flag once: in the risk line or in its section line. Keep the key words of the\n   flag text (for example \"months old\", \"appointed\", \"defendant\", \"judgment\", \"interest cover\").\n4. <financials>: revenue and its change, net profit or net loss, equity, audit opinion. Add a ratio\n   or cash flow ONLY if it has a flag. If \"revenue_change_vs_year\" is not latest_year - 1, write\n   \"vs FY<that year>\", not \"on prior year\". If the stale_financials flag exists, write\n   \"Accounts <accounts_age_months> months old.\" If financials is null, write\n   \"No financial statements in the record.\" and leave out \"(FY<latest_year>)\".\n5. <litigation>: \"<total> case(s): <as_defendant> as defendant (<open_as_defendant> pending or adverse),\n   <as_plaintiff> as plaintiff.\" plus any litigation flags. If total is 0, write \"No court cases.\"\n6. Do not write the company name or registration number.\n7. Money: RM1.23m or RM450k. Ratios: two decimals. Percentages: whole numbers.\n   Write \"net loss RM1.08m\", not \"negative ... -RM1.08m\".\n8. Maximum 100 words. Remove detail before you remove a flag.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000451\",\n \"name\": \"Mutiara Delima Bakery Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Food & Beverage\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Mengusahakan kedai kopi dan kafe di Penang\",\n \"incorporated\": \"1995-08-28\",\n \"directors\": 5,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 50.59\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-06-30\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": \"RM2.08m\",\n  \"revenue_change\": \"-7%\",\n  \"revenue_change_vs_year\": 2023,\n  \"accounts_age_months\": 18,\n  \"profit_after_tax\": \"-RM276k\",\n  \"net_margin\": \"-13%\",\n  \"total_equity\": \"-RM19k\",\n  \"borrowings\": \"RM787k\",\n  \"operating_cash_flow\": \"-RM139k\",\n  \"quick_ratio\": \"0.63\",\n  \"interest_cover\": \"-5.37\",\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 4\"\n },\n \"cases\": {\n  \"total\": 2,\n  \"as_defendant\": 1,\n  \"as_plaintiff\": 1,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"High concern\",\n \"flags\": {\n  \"recent_name_change\": \"Former name Gemilang Ventures Sdn. Bhd. (changed 2025-11-27)\",\n  \"net_loss\": \"FY2024 net loss RM276k\",\n  \"negative_equity\": \"Negative equity of -RM19k\",\n  \"negative_operating_cash_flow\": \"Negative operating cash flow of -RM139k\",\n  \"low_quick_ratio\": \"Quick ratio 0.63\",\n  \"low_interest_cover\": \"Interest cover -5.37x\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-06-30 (18 months old)\"\n },\n \"severity\": {\n  \"recent_name_change\": \"review\",\n  \"net_loss\": \"review\",\n  \"negative_equity\": \"high\",\n  \"negative_operating_cash_flow\": \"review\",\n  \"low_quick_ratio\": \"review\",\n  \"low_interest_cover\": \"review\",\n  \"stale_financials\": \"info\"\n }\n}"
+}

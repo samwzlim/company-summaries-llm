@@ -1,0 +1,39 @@
+{
+ "id": "a18Ea7zPBqP94-EPv6it0A4",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: High concern** \u2014 Status: Winding up, winding-up petition CASE-2022-3082 (Judgment entered, filed 2022-07-08); Winding-up petition CASE-2021-3977 (Judgment entered, filed 2021-03-28), 3 judgment(s) entered against the company.\n- **Profile:** Winding up private company, Hospitality, Kuala Lumpur, incorporated 1998. Boutique hotel in Kuching.\n- **Financials (FY2024):** Revenue RM4.51m, down 22% vs FY2023, net profit RM39k, equity RM7.91m, Unqualified audit opinion.\n- **Litigation:** 8 case(s): 7 as defendant (5 pending or adverse), 1 as plaintiff. 5 pending or adverse case(s) as defendant, total claims RM10,491,800.\n- **People:** 3 director(s). Largest shareholder: Director 3 (56%). 1 of 3 directors appointed in the last 24 months.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRNsGsfw8pZJ1BIdCl0aep+wylCOdQjLC6MHMWBadkpAxF4masXrJ0k2gpDrFBxroFAMO+rdzPMq6JoRG5/NYgac08J8mHhfh7Ni1QpXZRL2PiQydHKX3u/guaFmXjKfo8SA4xQtqe6DMV8ED8z7MBF+s4H65rid2tgt4Gf3gEJXC8zrs8qOTw=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448685,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 260,
+  "prompt_tokens": 1299,
+  "total_tokens": 1559,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a risk-screening summary of a Malaysian company for a team that vets suppliers\nand project partners. The team decides from your FIRST LINE if the company needs a closer look.\n\nUse ONLY the facts in the JSON. Copy numbers from the JSON; do not calculate new ones.\n\nWrite EXACTLY this Markdown: 5 lines, no blank lines, no preamble, no extra text.\n\n**Risk: <risk_level>** \u2014 <reasons>.\n- **Profile:** <status> private company, <industry>, <state>, incorporated <year>. <nature_of_business in English>.\n- **Financials (FY<latest_year>):** <financials>\n- **Litigation:** <litigation>\n- **People:** <N> director(s). Largest shareholder: <name> (<percentage>%). <people flags>\n\nRules:\n1. <risk_level> is exactly \"risk_level\" in the JSON.\n2. <reasons>: only flags with severity \"high\" or \"review\" (see \"severity\"), most serious first,\n   at most 3. NEVER put an \"info\" flag in the risk line. If there are none, write \"no high or review flags\".\n3. Mention EVERY flag once: in the risk line or in its section line. Keep the key words of the\n   flag text (for example \"months old\", \"appointed\", \"defendant\", \"judgment\", \"interest cover\").\n4. <financials>: revenue and its change, net profit or net loss, equity, audit opinion. Add a ratio\n   or cash flow ONLY if it has a flag. If \"revenue_change_vs_year\" is not latest_year - 1, write\n   \"vs FY<that year>\", not \"on prior year\". If the stale_financials flag exists, write\n   \"Accounts <accounts_age_months> months old.\" If financials is null, write\n   \"No financial statements in the record.\" and leave out \"(FY<latest_year>)\".\n5. <litigation>: \"<total> case(s): <as_defendant> as defendant (<open_as_defendant> pending or adverse),\n   <as_plaintiff> as plaintiff.\" plus any litigation flags. If total is 0, write \"No court cases.\"\n6. Do not write the company name or registration number.\n7. Money: RM1.23m or RM450k. Ratios: two decimals. Percentages: whole numbers.\n   Write \"net loss RM1.08m\", not \"negative ... -RM1.08m\".\n8. Maximum 100 words. Remove detail before you remove a flag.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-001212\",\n \"name\": \"Sinar Sinar Pelancongan Sdn. Bhd.\",\n \"status\": \"Winding up\",\n \"industry\": \"Hospitality\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Hotel butik di Kuching\",\n \"incorporated\": \"1998-01-17\",\n \"directors\": 3,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 3\",\n  \"percentage\": 56.47\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-09-30\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 4512871,\n  \"revenue_change\": -0.21849756407749857,\n  \"revenue_change_vs_year\": 2023,\n  \"accounts_age_months\": 15,\n  \"profit_after_tax\": 38566,\n  \"net_margin\": 0.0085,\n  \"total_equity\": 7906892,\n  \"borrowings\": 995812,\n  \"operating_cash_flow\": 109310,\n  \"quick_ratio\": 2.4152,\n  \"interest_cover\": 1.9265,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 8\"\n },\n \"cases\": {\n  \"total\": 8,\n  \"as_defendant\": 7,\n  \"as_plaintiff\": 1,\n  \"open_as_defendant\": 5\n },\n \"risk_level\": \"High concern\",\n \"flags\": {\n  \"status_not_active\": \"Status: Winding up\",\n  \"open_defendant_cases\": \"5 pending or adverse case(s) as defendant, total claims RM10,491,800\",\n  \"winding_up_petition_open\": \"Winding-up petition CASE-2022-3082 (Judgment entered, filed 2022-07-08); Winding-up petition CASE-2021-3977 (Judgment entered, filed 2021-03-28)\",\n  \"judgment_against\": \"3 judgment(s) entered against the company\",\n  \"recent_directors\": \"1 of 3 directors appointed in the last 24 months\"\n },\n \"severity\": {\n  \"status_not_active\": \"high\",\n  \"open_defendant_cases\": \"review\",\n  \"winding_up_petition_open\": \"high\",\n  \"judgment_against\": \"high\",\n  \"recent_directors\": \"info\"\n }\n}"
+}

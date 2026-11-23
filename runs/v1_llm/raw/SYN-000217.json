@@ -1,0 +1,39 @@
+{
+ "id": "P18Ea9GvFoWz694Pvt2S0Ac",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: Review** \u2014 FY2023 audit disclaimer of opinion and low quick ratio of 0.96.\n\n* **Profile**: Active education company (Tadika swasta dan taska di Johor Bahru) in Selangor, incorporated in 1991.\n* **Financials**: FY2024 revenue RM5.61m, profit RM386k, equity RM1.74m, and borrowings RM2.65m. Unqualified audit opinion by Audit Firm 3.\n* **Litigation**: 0 total cases.\n* **People**: 2 directors, with Director 1 holding 51%.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRPFDJg2FcxMV+77sSauV9EP5J7fFTGAKl1PE8Qf+9/5/wpxYxbdn1LL4nKjMmCoHppsTgqcB02/M7UHbpHlpYOQwMyoIdR5rth2i/pomdxuzlCQLakQ4KMDcv+HrJjCVqM61K1ImGjq1x/pXrYGidonhvBqlpd20XJY1NHkOGSYvZ75X4Qp4A=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448641,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 140,
+  "prompt_tokens": 682,
+  "total_tokens": 822,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000217\",\n \"name\": \"Teguh Bestari Learning Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Education\",\n \"state\": \"Selangor\",\n \"nature_of_business\": \"Tadika swasta dan taska di Johor Bahru\",\n \"incorporated\": \"1991-12-07\",\n \"directors\": 2,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 51.02\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-12-31\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 5606840,\n  \"revenue_change\": 0.36700315685071716,\n  \"profit_after_tax\": 386389,\n  \"net_margin\": 0.0689,\n  \"total_equity\": 1739735,\n  \"borrowings\": 2654552,\n  \"operating_cash_flow\": 523695,\n  \"quick_ratio\": 0.9583,\n  \"interest_cover\": 4.4822,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 3\"\n },\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"Review\",\n \"flags\": {\n  \"audit_issue_earlier\": \"FY2023 audit: Disclaimer of opinion\",\n  \"low_quick_ratio\": \"Quick ratio 0.96\"\n }\n}"
+}

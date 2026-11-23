@@ -1,0 +1,39 @@
+{
+ "id": "NF8Ea5zMCLX7jNAPoKWw8Ag",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: High concern** \u2014 Negative equity (-RM19k), net loss (RM276k), negative operating cash flow (-RM139k), and stale financials (18 months old).\n* **Profile**: Active Food & Beverage company in Kuala Lumpur (business: Mengusahakan kedai kopi dan kafe di Penang), incorporated 1995-08-28. Recent name change: Former name Gemilang Ventures Sdn. Bhd. (changed 2025-11-27).\n* **Financials**: FY2024 revenue RM2.08m (-7% change). FY2024 net loss RM275k, net margin -0.13. Negative equity of -RM18k. Borrowings RM787k. Negative operating cash flow of -RM139k. Quick ratio 0.63. Interest cover -5.37x. Audit opinion Unqualified by Audit Firm 4. Stale financials: Latest accounts are for year ended 2024-06-30 (18 months old).\n* **Litigation**: 2 total cases (1 as defendant, 1 as plaintiff, 0 open as defendant).\n* **People**: 5 directors. Largest shareholder is Director 1 (51%).",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRPHUIPdO4Ycf6whWUD4IeOWBG12eut9ZKeH3ObzkU2ZiNEpSoUIZJlwIxNUshmdPYPjZSWhQjbVjZ06pKfkOsOXwBLvli2Z8Gui+s0ysEbZed6xJ5Vi93LLOH2NBSz3JZihxAvUFQfJccX8NqDvTV2ixUNRc9he9Pm8a0NkOFnovzVGwMG6OA=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448635,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 285,
+  "prompt_tokens": 816,
+  "total_tokens": 1101,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000451\",\n \"name\": \"Mutiara Delima Bakery Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Food & Beverage\",\n \"state\": \"Kuala Lumpur\",\n \"nature_of_business\": \"Mengusahakan kedai kopi dan kafe di Penang\",\n \"incorporated\": \"1995-08-28\",\n \"directors\": 5,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 50.59\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-06-30\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 2083984,\n  \"revenue_change\": -0.0737161380422458,\n  \"profit_after_tax\": -275562,\n  \"net_margin\": -0.1322,\n  \"total_equity\": -18522,\n  \"borrowings\": 786783,\n  \"operating_cash_flow\": -138894,\n  \"quick_ratio\": 0.6345,\n  \"interest_cover\": -5.368,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 4\"\n },\n \"cases\": {\n  \"total\": 2,\n  \"as_defendant\": 1,\n  \"as_plaintiff\": 1,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"High concern\",\n \"flags\": {\n  \"recent_name_change\": \"Former name Gemilang Ventures Sdn. Bhd. (changed 2025-11-27)\",\n  \"net_loss\": \"FY2024 net loss RM275,562\",\n  \"negative_equity\": \"Negative equity of -RM18,522\",\n  \"negative_operating_cash_flow\": \"Negative operating cash flow of -RM138,894\",\n  \"low_quick_ratio\": \"Quick ratio 0.63\",\n  \"low_interest_cover\": \"Interest cover -5.37x\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-06-30 (18 months old)\"\n }\n}"
+}

@@ -1,0 +1,39 @@
+{
+ "id": "m18Ea9-eOdLKz7sP9sfYgQQ",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: No major flags** \u2014 no high or review flags.\n- **Profile:** Active private company, Hospitality, Kedah, incorporated 1995. Boutique hotel in Kota Kinabalu.\n- **Financials (FY2024):** Revenue RM16.44m (up 37% vs FY2023), net profit RM975k, equity RM6.91m, audit opinion Unqualified.\n- **Litigation:** No court cases.\n- **People:** 2 director(s). Largest shareholder: Gemilang Holdings Sdn. Bhd. (51%). Gemilang Holdings Sdn. Bhd. holds 51.0%",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfRPTblxCQn2oxu7ygE9I4lHAVh2WKXE6WFq72dQHU8YQavBr+lCk4oQ/GnfqdXhEFWrFOHyiNwglcFkcQevjMr3u15YMmuqcB8mmizX8CHO/mJgod6px76YtALYiOnGyGjk2K1qi8QjcdNFkkevsJ+BnH8W8Mtj80ZXkZR5RH8n/QLdEFCjxRA=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448743,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 147,
+  "prompt_tokens": 1134,
+  "total_tokens": 1281,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a risk-screening summary of a Malaysian company for a team that vets suppliers\nand project partners. The team decides from your FIRST LINE if the company needs a closer look.\n\nUse ONLY the facts in the JSON. Copy numbers from the JSON; do not calculate new ones.\n\nWrite EXACTLY this Markdown: 5 lines, no blank lines, no preamble, no extra text.\n\n**Risk: <risk_level>** \u2014 <reasons>.\n- **Profile:** <status> private company, <industry>, <state>, incorporated <year>. <nature_of_business in English>.\n- **Financials (FY<latest_year>):** <financials>\n- **Litigation:** <litigation>\n- **People:** <N> director(s). Largest shareholder: <name> (<percentage>%). <people flags>\n\nRules:\n1. <risk_level> is exactly \"risk_level\" in the JSON.\n2. <reasons>: only flags with severity \"high\" or \"review\" (see \"severity\"), most serious first,\n   at most 3. NEVER put an \"info\" flag in the risk line. If there are none, write \"no high or review flags\".\n3. Mention EVERY flag once: in the risk line or in its section line. Keep the key words of the\n   flag text (for example \"months old\", \"appointed\", \"defendant\", \"judgment\", \"interest cover\").\n4. <financials>: revenue and its change, net profit or net loss, equity, audit opinion. Add a ratio\n   or cash flow ONLY if it has a flag. If \"revenue_change_vs_year\" is not latest_year - 1, write\n   \"vs FY<that year>\", not \"on prior year\". If the stale_financials flag exists, write\n   \"Accounts <accounts_age_months> months old.\" If financials is null, write\n   \"No financial statements in the record.\" and leave out \"(FY<latest_year>)\".\n5. <litigation>: \"<total> case(s): <as_defendant> as defendant (<open_as_defendant> pending or adverse),\n   <as_plaintiff> as plaintiff.\" plus any litigation flags. If total is 0, write \"No court cases.\"\n6. Do not write the company name or registration number.\n7. Money: RM1.23m or RM450k. Ratios: two decimals. Percentages: whole numbers.\n   Write \"net loss RM1.08m\", not \"negative ... -RM1.08m\".\n8. Maximum 100 words. Remove detail before you remove a flag.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-000381\",\n \"name\": \"Cahaya Harmoni Hotel Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Hospitality\",\n \"state\": \"Kedah\",\n \"nature_of_business\": \"Boutique hotel in Kota Kinabalu\",\n \"incorporated\": \"1995-10-17\",\n \"directors\": 2,\n \"largest_shareholder\": {\n  \"type\": \"company\",\n  \"name\": \"Gemilang Holdings Sdn. Bhd.\",\n  \"registrationNumber\": \"SYN-009757\",\n  \"incorporatedIn\": \"Malaysia\",\n  \"percentage\": 51.0\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-12-31\",\n  \"years_available\": [\n   2022,\n   2023,\n   2024\n  ],\n  \"revenue\": 16436671,\n  \"revenue_change\": 0.36512076124716913,\n  \"revenue_change_vs_year\": 2023,\n  \"accounts_age_months\": 12,\n  \"profit_after_tax\": 975406,\n  \"net_margin\": 0.0593,\n  \"total_equity\": 6905119,\n  \"borrowings\": 5986814,\n  \"operating_cash_flow\": 1197487,\n  \"quick_ratio\": 1.3575,\n  \"interest_cover\": 4.8977,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 6\"\n },\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"No major flags\",\n \"flags\": {\n  \"corporate_shareholder\": \"Gemilang Holdings Sdn. Bhd. holds 51.0%\"\n },\n \"severity\": {\n  \"corporate_shareholder\": \"info\"\n }\n}"
+}

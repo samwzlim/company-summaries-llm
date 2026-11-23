@@ -1,0 +1,39 @@
+{
+ "id": "QV8Ea8u3J-64z7sPs62QoAQ",
+ "choices": [
+  {
+   "finish_reason": "stop",
+   "index": 0,
+   "logprobs": null,
+   "message": {
+    "content": "**Risk: Review** \u2014 Net loss RM4.13m, negative operating cash flow -RM1.06m, interest cover -1.76x, stale financials (18 months old), and young company (2.3 years old).\n\n* **Profile**: Active Selangor agriculture company (Bestari Kirana Ladang Sdn. Bhd.) in oil palm plantation and fresh fruit bunch supply, incorporated 2023-08-11.\n* **Financials**: FY2024 revenue RM62.46m, net loss -RM4.13m, net margin -0.07, total equity RM45.95m, borrowings RM27.24m, operating cash flow -RM1.06m, quick ratio 1.25, interest cover -1.76, audited by Audit Firm 4 with an unqualified opinion.\n* **Litigation**: 0 total cases (0 as defendant, 0 as plaintiff, 0 open as defendant).\n* **People**: 4 directors, with Director 1 as the largest shareholder at 53%.",
+    "refusal": null,
+    "role": "assistant",
+    "annotations": null,
+    "audio": null,
+    "function_call": null,
+    "tool_calls": null,
+    "extra_content": {
+     "google": {
+      "thought_signature": "Eo4BCosBAWkUfROw4g4yUDry3Wz6pq+HU58eaxGOnn5mId3nClVtogEuL60jezrIszsUu7ZrTAF51NmajlqmEsjIUsXmLha+Golsy4sMiyPle8w45LvjBdQ3tvqfvjVL9Nz6US5fZAIayTv7Qe+cFuWoJSLqI4MFNT1gBFqLQzWNIptSWDFhow9+EoSwYbUdCA=="
+     }
+    }
+   }
+  }
+ ],
+ "created": 1795448644,
+ "model": "gemini-3.5-flash-lite",
+ "object": "chat.completion",
+ "metadata": null,
+ "moderation": null,
+ "service_tier": null,
+ "system_fingerprint": null,
+ "usage": {
+  "completion_tokens": 240,
+  "prompt_tokens": 746,
+  "total_tokens": 986,
+  "completion_tokens_details": null,
+  "prompt_tokens_details": null
+ },
+ "_prompt": "You write a short summary of a company for a team that vets suppliers and project partners.\nThe team reads your summary first, to decide if the company needs a closer look.\n\nRules:\n- Use ONLY the facts in the JSON. Do not add facts, opinions or numbers that are not in the JSON.\n- Start with one line: **Risk: <risk_level>** \u2014 then the 1 to 3 most serious reasons.\n- Then 4 bullets: **Profile**, **Financials**, **Litigation**, **People**.\n- Mention EVERY item in \"flags\". If a flag gives context (for example a young company), use it to explain the risk.\n- Write money as RM1.23m or RM450k. Write ratios with two decimals. Write percentages as whole numbers.\n- Maximum 120 words. Markdown only, no preamble.\n\nCompany facts (JSON):\n{\n \"registrationNumber\": \"SYN-001158\",\n \"name\": \"Bestari Kirana Ladang Sdn. Bhd.\",\n \"status\": \"Active\",\n \"industry\": \"Agriculture\",\n \"state\": \"Selangor\",\n \"nature_of_business\": \"Oil palm plantation and fresh fruit bunch supply\",\n \"incorporated\": \"2023-08-11\",\n \"directors\": 4,\n \"largest_shareholder\": {\n  \"type\": \"individual\",\n  \"name\": \"Director 1\",\n  \"percentage\": 52.86\n },\n \"financials\": {\n  \"latest_year\": 2024,\n  \"year_end\": \"2024-06-30\",\n  \"years_available\": [\n   2024\n  ],\n  \"revenue\": 62464139,\n  \"revenue_change\": null,\n  \"profit_after_tax\": -4128397,\n  \"net_margin\": -0.0661,\n  \"total_equity\": 45948581,\n  \"borrowings\": 27238012,\n  \"operating_cash_flow\": -1055947,\n  \"quick_ratio\": 1.2519,\n  \"interest_cover\": -1.7558,\n  \"audit_opinion\": \"Unqualified\",\n  \"audit_firm\": \"Audit Firm 4\"\n },\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_as_defendant\": 0\n },\n \"risk_level\": \"Review\",\n \"flags\": {\n  \"young_company\": \"Incorporated 2023-08-11 (2.3 years old)\",\n  \"net_loss\": \"FY2024 net loss RM4,128,397\",\n  \"negative_operating_cash_flow\": \"Negative operating cash flow of -RM1,055,947\",\n  \"low_interest_cover\": \"Interest cover -1.76x\",\n  \"stale_financials\": \"Latest accounts are for year ended 2024-06-30 (18 months old)\"\n }\n}"
+}

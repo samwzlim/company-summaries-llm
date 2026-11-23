@@ -1,0 +1,7 @@
+{
+ "run": "v0_rules",
+ "writer": "rules",
+ "data": "data/companies.jsonl",
+ "limit": 0,
+ "ids": "SYN-000545,SYN-001212,SYN-000451,SYN-000217,SYN-001158,SYN-000302,SYN-000267,SYN-000029,SYN-000381,SYN-001970"
+}
