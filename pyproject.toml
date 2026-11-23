@@ -5,6 +5,7 @@ description = "Build, experiment with and evaluate a system that summarises comp
 requires-python = ">=3.14,<3.15"
 dependencies = [
   "fastapi",
+  "openai>=3.57.0",
   "pydantic",
   "uvicorn",
 ]
